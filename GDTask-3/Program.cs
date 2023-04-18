@@ -1,30 +1,8 @@
-﻿Console.WriteLine(shifr("test", 1700));
+﻿Console.WriteLine(heron(9, 6,7));
 
-static string shifr(string toShifr, int i)
+static double heron(double a, double b, double c)
 {
-    string result = "";
-    foreach (var element in toShifr)
-    {
-        int el_char = (int)element + i;
-        el_char = recursiya22(el_char);
-
-        result += (char)el_char;
-    }
-
-    return result;
-}
-
-static int recursiya22(int i)
-{
-    if (i > 255)
-    {
-        i -= 255;
-    }
-
-    if (i > 255)
-    {
-        return recursiya22(i);
-    }
-
-    return i;
+    double p = (a + b + c) / 2.0;
+    double area = Math.Sqrt(p * (p - a) * (p - b) * (p - c));
+    return Math.Round(area, 2);
 }
